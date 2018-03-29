@@ -1,0 +1,26 @@
+<h1>Likelion#index</h1>
+<p>Find me in app/views/likelion/index.html.erb</p>
+
+
+<%@mylotto.each do |a|%> <!--- 각각의 요소를 a(배열 이름)로 잠깐씩 선언하겠다.실제 보이지 않음 무작위로 뽑음--->
+                         <!--- 변수명.each do |이름| --->
+<%=a%>
+<%end%>  <!--- 변수명.each do |이름| --->
+
+</br>
+
+<%@temp.each do |b|%>
+
+<%=b%>
+<%end%>
+
+</br>
+
+<%@whatisit.each do |c|%>
+
+<%=c%>
+<%end%>
+
+</br>
+
+bouns_num: <%=@bouns_num%>
