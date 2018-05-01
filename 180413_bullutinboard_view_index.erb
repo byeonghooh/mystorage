@@ -1,0 +1,21 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<!-- index.html : 전체 게시물 -->
+
+<h> 전체 게시판 </h>
+
+<a href = "/posts/new"> <button> 새로운 글 </button></a> <!-- posts 테이블 -->
+
+<% @post.each do |p| %> <!-- 반복 -->
+    <p>
+        title <br>
+        <a href="/posts/show/<%=p.id%>"> <%= p.title %> </a> <!-- 위에서의 p임 - id, title -->
+    </p>
+    <p>
+        content <br>
+        <%= p.content %>
+    </p>
+    <hr>
+<% end %> <!-- each가 끝나는 것 -->
+    
