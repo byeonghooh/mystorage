@@ -1,0 +1,10 @@
+<h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p>
+
+
+<h1> 게시글 수정 </h1>
+  <form action="/posts/update/<%= @post.id%>" method= "post"> <!-- 수정 해서 바꿔주기 -->
+    <input type="text" name="title" value = "<%= @post.title%>"> <!-- 편집(edit) 눌렀을 때 넣었던 값을 유지할 수 있음-->
+    <input type="text" name="content" value = "<%= @post.content%>">
+    <input type="submit" value="제출">
+  </form>
