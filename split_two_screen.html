@@ -1,0 +1,64 @@
+    
+    <head>
+     <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    
+    <body>
+    
+    <hr>
+    
+    <div class="split left">
+      <div class="centered">
+       <h1>Food List ( Food Name & Food Description )</h1>
+       <p>제출 버튼 누르면 음식 이름 및 설명이 추가됨</p>
+       <p>랜덤 버튼 누르면 음식 리스트에서 아무거나 하나 뽑아 새 페이지에 제공</p>
+    
+    <!-- index.html : 전체 게시물 -->
+    
+      <h2> 음식 이름과 음식 설명 입력하세요 (전체 목록에 추가됩니다.) </h2>
+      <form action="/posts/create" method= "post">
+        <input type="text" name="title" placeholder="wow"> <!--value가 없을 때 placeholder가 작동하는 것임-->
+        <input type="text" name="content">
+        <input type="submit" value="제출">
+      </form>
+    
+      <p> 음식 이름을 클릭하시면, 변경 삭제가 가능합니다. </p>
+      
+      </div>
+    </div>
+    
+
+    <div class="split right">
+      <div class="centered">
+        <h1> <strong> (((( Food List )))) </strong> </h1>
+    
+        <table class="type10" border="5" border-color: "blue" >
+            <thead  border="3" border-color: "blue" >
+            <tr>
+                <th scope="cols">Food Name</th>
+                <th scope="cols">Food Description</th>
+            </tr>
+            </thead>
+    
+            <% @post.each do |p| %> <!-- 반복 -->
+    
+            <tbody border="3" border-color: "blue" >
+            <tr>
+                <th scope="row"><a href="/posts/show/<%=p.id%>"> <%= p.title %> </th>
+                <td><%= p.content %></td>
+            </tr>
+    
+             <% end %> <!-- each가 끝나는 것 -->
+         
+            </tbody>
+        </table>
+    
+    
+          <h3> 이 테이블(리스트)에서 아무거나 골라주세요! </h3>
+          <a href = "/posts/new"> <button> 새로운 페이지 </button></a> <!-- posts 테이블 -->
+      
+      </div>
+    </div>
+
+    </hr>
+</body>
